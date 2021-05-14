@@ -1,0 +1,16 @@
+body{background-color:cadetblue;}
+
+h1{text-align: center;
+    text-decoration:overline;
+    color: aquamarine;
+    font-size:50px;
+
+}button{margin: 0;
+        position: absolute;
+        top: 30%;
+        left: 25%;
+        width: 50%;
+        height: 10%;
+        background-color:khaki ;
+        border-radius: 30px;
+}
