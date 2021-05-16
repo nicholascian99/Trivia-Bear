@@ -1,3 +1,5 @@
+font-family: 'Goblin One', cursive;
+
 body{background-color:cadetblue;}
 
 h1{text-align: center;
@@ -8,8 +10,8 @@ h1{text-align: center;
 }button{margin: 0;
         position: absolute;
         top: 30%;
-        left: 25%;
-        width: 50%;
+        left: 40%;
+        width: 20%;
         height: 10%;
         background-color:khaki ;
         border-radius: 30px;
