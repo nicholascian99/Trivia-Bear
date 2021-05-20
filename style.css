@@ -28,20 +28,28 @@ body{background-color:cadetblue;
             border-radius: 10px;
             padding: 10px;
             box-shadow: 0 0 10px 2px;
-            justify-content: space-between;
+            justify-content:space-between;
 
 }
 
-.btn{width: 98%;
+.btn{display: flex;
+    width: 98%;
     font-size:x-large;
 
 }
 
-#start-button , #next-button{width:25%;
-                            font-size: x-large;
+/* .hide{display: none; } */
+
+/* #start-button , #next-button{width:25%; */
+                            /* font-size: x-large;} */
+
+                            .controls {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
 
 
-}
 
 /* Title screen */
 /* button{margin: 0;
