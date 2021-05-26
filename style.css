@@ -3,8 +3,9 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Goblin+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap');
 
-body{background-color:cadetblue;
+body{background-image: url(https://static5.depositphotos.com/1000781/528/i/600/depositphotos_5281336-stock-photo-grunge-wooden-logs.jpg);
     font-family: 'Goblin One', cursive;
     padding: 0;
     margin: 0;
@@ -14,66 +15,134 @@ body{background-color:cadetblue;
     justify-content: center;
     align-items: center;}
 
-/* h1{text-align: center;
-    text-decoration:overline;
-    color: aquamarine;
-    font-size:50px;} */
 
-.container{display:flex;
-            flex-direction: column;
+:root {
+    --hue-neutral:45;
+    --hue-wrong: 0;
+    --hue-correct:145;
+}
+
+#question-container{
+        --hue:var(--hue-neutral);
+        position: absolute;
             width:  800px;
             max-width: 80%;
-            height: 30%;
-            background-color: white;
+            height: 35%;
+            background-color: hsl(var(--hue), 40%,  20%);
             border-radius: 10px;
             padding: 10px;
             box-shadow: 0 0 10px 2px;
-            justify-content:space-between;
 
 }
 
-.btn{display: flex;
+#question-container.correct{
+    --hue:var(--hue-correct)
+}
+
+#question-container.wrong{
+    --hue:var(--hue-wrong)
+}
+
+#question-container.neutral{
+    --hue:var(--hue-neutral)
+}
+
+#question-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+#question{
+    text-align:left;
+    font-size: larger;
+}
+
+.btn{
+    --hue: var(--hue-neutrak);
     width: 98%;
     font-size:x-large;
+    margin-top: 10px;
+    padding: 5px 5px;
+    border: 2px solid hsl(var(--hue), 100%, 80%);
+    background-color: hsl(var(--hue), 100%,40%);
+    color: rgb(235, 235, 235);
+    font-family: 'Goblin One', cursive;
+    border-radius: 25px;
+    cursor: pointer;
 
 }
 
-/* .hide{display: none; } */
+.hide{display: none;}
 
-/* #start-button , #next-button{width:25%; */
-                            /* font-size: x-large;} */
 
-                            .controls {
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
+
+#next-button {
+    width: 50%;
+
                             }
 
 
 
-/* Title screen */
-/* button{margin: 0;
-        position: absolute;
-        top: 48%;
-        left: 45%;
-        width: 10%;
-        height: 10%;
-        background-color:khaki ;
+/* Title screen */ 
+
+.strt-scrn-cont{border:2px solid olivedrab;
+                display: flex;
+                height: 100vh;
+                width: 100vw;
+                justify-content: center;
+                align-items:flex-start;
+
+}
+
+.sc-btn-img{position: absolute;
+        margin: 0; 
+        top: 53%;
+        left: 50%;
+        width: 12%;
+        height: 21%;
+        color: red;
         border-radius: 30px;
         font-family: 'Goblin One', cursive;
-} */
+        font-size:x-large;
+        font-weight: 900;
+} 
 
-/* aside{display: flex;
-    background-color: whitesmoke;
-    border: 2px solid salmon;
-    width: 98vw;
-    height: 85vh; */
-/* }
+h1{position: absolute;
+    color: rgb(212, 128, 17);
+    font-size: 110px;
+    text-align: center;
+    bottom: 75%;
+    max-width: 600;
 
-#bear1{margin: auto;
-    width: 20%;
+}
 
-        
+.bear1{margin: auto;
+    width: 40%; 
+    height: 100%
+}
 
-} */
+.start-button{position: absolute;
+    color: rgba(145, 111, 18, 0.952);
+    background-color: rgb(230, 230, 21);
+    left: 53%;
+    top: 63.65%;
+    border: 2px solid rgb(110, 89, 89);
+    border-radius: 50px;
+    font-size: xx-large;
+    font-family: 'Goblin One', cursive;
+}
+#start-screen-start:hover{cursor: pointer;
+            color: white;
+            border: 2px solid white;
+}
+#honey-img:hover{
+    cursor:pointer
+}
 
+.btn:hover{
+    transition: transform 150ms;
+    transform: scale(1.05);
+}

@@ -8,42 +8,48 @@
     <title>Document</title>
 </head>
 <body>
+ 
+                    <!-- start screen  -->
 
-    <!-- start screen
 
-
-    <div id=start-screen><h1> Triva Bear</header>
+     <div id="start-screen-div" class="strt-scrn-cont">
         
-        <button>START</button>
-        </div>
-        <aside>
-            <img id=bear1 src="https://www.kindpng.com/picc/m/107-1075848_png-for-cartoon-bear-transparent-png.png" alt="bear 1">
+        <h1 id="start-screen-h1">Trivia Bear</h1>
+        
+        <img id="start-screen-honey" class= "sc-btn-img" src="https://i.pinimg.com/originals/6c/fe/f1/6cfef14c17bdc831430e4fa752b7d008.png"/>
+
+        <button id="start-screen-start" class="start-button" >START</button>
+        
+        <img id="start-screen-bear1" class="bear1" src="https://images.squarespace-cdn.com/content/v1/586d22c73e00bec12e8985ae/1621919742467-MUEK3YPPNO761CRWMJID/ke17ZwdGBToddI8pDm48kBHzvDjQYPqieZwO1KpW4gxZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxXh3pJFx0yNxd9fmMAs1Ht2KttNXuJzxwZd3TM8qvf6NX-pxQXxu4UKB1aRfwaE4E/nickbear2.jpg?format=750w" alt="bear 1">
+
+        
     
-        </aside> -->
+     </div>
+                    <!-- end of start screen  -->
 
-
-    <div class= "container">
+                    <!-- questions card -->
+    <div id="question-container" class= "container hide">
+        
         <div id= "question-box" class="hide">
-            <div id="question">Question</div>
-            <div id="answer-buttons" class="button-grid">
-                <button class= "btn">Answer 1</button>
-                <button class= "btn">Answer 2</button>
-                <button class= "btn">Answer 3</button>
-                <button class= "btn">Answer 4</button>
+        <div id="question">Question</div>
+        <div id="answer-buttons" class="button-grid">
+            
+            <button class= "btn">Answer 1</button>
+            <button class= "btn">Answer 2</button>
+            <button class= "btn">Answer 3</button>
+            <button class= "btn">Answer 4</button>
+
+            <button id="next-button" class="next-button btn hide">Next</button>
 
         </div>
+
         </div>
-        <div class=controls>
-            <button id="start-button" class= "start-button btn">Start</button>
-            <button id="next-button" class="next-button btn hide">Next</button>
-            
-           
-            </div>
+       
         </div>
 
 
     </div>
-
+                    <!-- end of questions card -->
 
     <script src="app.js"></script>
 </body>
