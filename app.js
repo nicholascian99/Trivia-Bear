@@ -70,6 +70,7 @@ function showQuestion(question) {
 function resetQuestionCard() {
     nextButton.classList.add("hide")
     while (answerButtons.firstChild) {
+        console.log(answerButtons.firstChild)
         answerButtons.removeChild
         (answerButtons.firstChild)
     }
