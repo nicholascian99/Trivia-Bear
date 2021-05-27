@@ -28,24 +28,29 @@ body{background-image: url(https://static5.depositphotos.com/1000781/528/i/600/d
             width:  800px;
             max-width: 80%;
             height: 35%;
-            background-color: hsl(var(--hue), 40%,  20%);
+            background: hsl(var(--hue), 40%,  20%);
             border-radius: 10px;
             padding: 10px;
             box-shadow: 0 0 10px 2px;
 
 }
 
-#question-container.correct{
+
+
+
+body.correct{
     --hue:var(--hue-correct)
 }
 
-#question-container.wrong{
+body.wrong{
     --hue:var(--hue-wrong)
 }
 
-#question-container.neutral{
+body.neutral{
     --hue:var(--hue-neutral)
 }
+
+
 
 #question-box{
     display: flex;
@@ -55,19 +60,24 @@ body{background-image: url(https://static5.depositphotos.com/1000781/528/i/600/d
     
 }
 
+@media(max-height:750px){
+    #question-box{overflow-y: scroll;
+    }
+}
+
 #question{
     text-align:left;
-    font-size: larger;
+    font-size:larger;
 }
 
 .btn{
-    --hue: var(--hue-neutrak);
+    --hue: var(--hue-neutral);
     width: 98%;
     font-size:x-large;
     margin-top: 10px;
     padding: 5px 5px;
     border: 2px solid hsl(var(--hue), 100%, 80%);
-    background-color: hsl(var(--hue), 100%,40%);
+    background: hsl(var(--hue), 100%,40%);
     color: rgb(235, 235, 235);
     font-family: 'Goblin One', cursive;
     border-radius: 25px;
@@ -75,14 +85,38 @@ body{background-image: url(https://static5.depositphotos.com/1000781/528/i/600/d
 
 }
 
+
+.btn:hover{
+    transition: transform 150ms;
+    transform: scale(1.05);
+}
+
+.btn.correct {
+    --hue: var(--hue-correct);
+
+}
+
+.btn.wrong{
+    --hue: var(--hue-wrong);
+}
+
+@media(max-height:750px){
+.btn{
+    height: 35px;
+    font-size: medium;
+    overflow-y: scroll;
+}
+}
+
+
+
 .hide{display: none;}
 
 
 
 #next-button {
-    width: 50%;
-
-                            }
+    width: 100%;
+}
 
 
 
@@ -119,6 +153,22 @@ h1{position: absolute;
 
 }
 
+@media(max-width: 1444px),(max-height:740px){
+    h1{
+        font-size: 80px;
+    }
+}
+@media(max-width: 1050px),(max-height:530px){
+    h1{
+        font-size: 50px;
+    }
+}
+
+
+
+
+
+
 .bear1{margin: auto;
     width: 40%; 
     height: 100%
@@ -131,18 +181,37 @@ h1{position: absolute;
     top: 63.65%;
     border: 2px solid rgb(110, 89, 89);
     border-radius: 50px;
-    font-size: xx-large;
     font-family: 'Goblin One', cursive;
-}
-#start-screen-start:hover{cursor: pointer;
-            color: white;
-            border: 2px solid white;
-}
-#honey-img:hover{
-    cursor:pointer
+    font-size: xx-large;
 }
 
-.btn:hover{
-    transition: transform 150ms;
-    transform: scale(1.05);
+#start-screen-start:hover{cursor: pointer;
+    color: white;
+    border: 2px solid white;
+}
+
+@media (max-width: 1525px),(max-height:730px){
+    .start-button{width: 80px;
+                height: 40px;
+                    font-size: 20px;
+    }    
+
+}
+
+@media (max-width: 950px),(max-height:450px){
+    .start-button{width: 50px;
+                height: 30px;
+                font-size: 10px;
+
+
+    }
+}
+    
+@media(max-height:750px){
+    #question-container{
+        overflow-y: scroll;
+
+
+    }
+
 }

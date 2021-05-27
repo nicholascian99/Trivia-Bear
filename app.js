@@ -1,3 +1,9 @@
+const correct = document.getElementsByClassName("correct")
+console.log(correct)
+
+const wrong = document.getElementsByClassName("wrong")
+console.log(wrong)
+
 const startScreenH1 = document.getElementById("start-screen-h1")
 const startScreenHoney = document.getElementById("start-screen-honey")
 const startScreenStart = document.getElementById("start-screen-start")
@@ -6,9 +12,10 @@ const startScreenDiv = document.getElementById("start-screen-div")
 
 const questionContainer = document.getElementById("question-container")
 const questionBox = document.getElementById("question-box")
-const questionElement = document.getElementById('question')
-const answerButtons = document.getElementById('answer-buttons')
+const questionElement = document.getElementById("question")
+const answerButtons = document.getElementById("answer-buttons")
 const nextButton = document.getElementById("next-button")
+
 
 let mixedQuestions, currentQuestionIndex
 
@@ -16,6 +23,10 @@ let mixedQuestions, currentQuestionIndex
 // console.log(questionContainer)
 
 startScreenStart.addEventListener('click', startGame)
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++
+    setNextQuestion()
+})
 
 
 function startGame() {
@@ -27,7 +38,7 @@ function startGame() {
     startScreenDiv.classList.add('hide')
 
     questionContainer.classList.remove('hide')
-    shuffledQuestions = questions.sort(() => Math.random() - .5)
+    mixedQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     setNextQuestion()
     
@@ -35,18 +46,77 @@ function startGame() {
 }
 
 function setNextQuestion(){
-    showQuestion(shuffledQuestions[currentQuestionIndex])
+    resetQuestionCard()
+    showQuestion(mixedQuestions[currentQuestionIndex])
 
 }
+
 
 function showQuestion(question) {
-    questionElement.innterText = question.question
+    questionElement.innerText = question.question
+    question.answers.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+        answerButtons.appendChild(button)
+    })
 }
 
-function selectAnswer() {
 
+function resetQuestionCard() {
+    nextButton.classList.add("hide")
+    while (answerButtons.firstChild) {
+        answerButtons.removeChild
+        (answerButtons.firstChild)
+    }
 }
-let questions = [
+
+
+
+
+function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerButtons.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+        
+    })
+    if(mixedQuestions.length > currentQuestionIndex + 1) {
+        nextButton.classList.remove("hide")
+    }else {
+        startButton.innerText = "Restart"
+        startButton.classList.remove("hide")
+    }
+    
+}
+
+
+
+function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if (correct) {
+        element.classList.add('correct')
+        // console.log('correct')
+        
+    }else {
+        element.classList.add('wrong')
+        // console.log('wrong')
+    }
+}
+
+function clearStatusClass(element) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
+}
+
+
+
+const questions = [
     {
         question: "How likely is a polar bear successful when it goes hunting for food?",
         answers: [
@@ -59,37 +129,37 @@ let questions = [
     {
         question:"When stumbled upon, which of these bears should you NOT play dead around?",
         answers:[
-            {text: "North American black bears"},
-            {text: "Grizzly Bears"},
-            {text: "Brown Bears"},
-            {text: "All of these, playing dead doesn't actually work"},
+            {text: "All of these, playing dead doesn't actually work",correct:false},
+            {text: "Grizzly Bears", correct:false},
+            {text: "Brown Bears", correct:false},
+            {text: "North American black bears", correct:true},
         ]
     },
     {
         question:"How many species of bears exists today?",
         answers:[
-            {text: "8"},
-            {text: "18"},
-            {text: "28"},
-            {text: "5"},
+            {text: "5", correct:false},
+            {text: "8", correct:true},
+            {text: "18", correct: false},
+            {text: "28", correct: false},
         ]
     },
     {
         question:"How much of the Giant Panda's diet is strictly bamboo?",
         answers:[
-            {text: "99%"},
-            {text: "75%"},
-            {text: "50%"},
-            {text: "25%"},
+            {text: "99%", correct:true},
+            {text: "75%", correct: false},
+            {text: "50%", correct:false},
+            {text: "25%", correct:false},
         ]
     },
     {
         question:"Which species is the only bear that routines carries their young on their backs?",
         answers:[
-            {text: "Grizzly Bears"},
-            {text: "Giant Panda"},
-            {text: "Sloth Bear"},
-            {text: "Sun Bear"},
+            {text: "Grizzly Bears", correct:false},
+            {text: "Giant Panda",correct:false},
+            {text: "Sloth Bear",correct:true},
+            {text: "Sun Bear",correct:false},
         ]
     }
 
