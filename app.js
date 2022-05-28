@@ -155,7 +155,7 @@ const questions = [
         ]
     },
     {
-        question:"Which species is the only bear that routines carries their young on their backs?",
+        question:"Which species is the only bear that routinely carries their young on their backs?",
         answers:[
             {text: "Grizzly Bears", correct:false},
             {text: "Giant Panda",correct:false},
