@@ -5,7 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Goblin+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap');
 
-body{background-image: url(https://static5.depositphotos.com/1000781/528/i/600/depositphotos_5281336-stock-photo-grunge-wooden-logs.jpg);
+body{
+    background-image: url(https://static5.depositphotos.com/1000781/528/i/600/depositphotos_5281336-stock-photo-grunge-wooden-logs.jpg);
+    background-repeat:repeat; ;
+    /* background-size: contain; */
     font-family: 'Goblin One', cursive;
     padding: 0;
     margin: 0;

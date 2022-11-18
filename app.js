@@ -122,7 +122,7 @@ const questions = [
         question: "How likely is a polar bear successful when it goes hunting for food?",
         answers: [
             {text: "less than 2%", correct:true},
-            {text: "15%", corrent:false},
+            {text: "15%", correct:false},
             {text: "30%", correct:false},
             {text: "greater than 50%",correct:false}
         ]
